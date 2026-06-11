@@ -227,3 +227,23 @@ button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 .error-box { text-align:center; padding:60px 20px; }
 .error-box p { font-family:'Barlow Condensed',sans-serif; font-size:20px; color:#e55; margin-bottom:10px; }
 .error-box small { color:var(--muted); font-size:15px; }
+
+/* ══ MOBILE SIZING FIX ════════════════════════════════════════
+   Big Bebas numerals were overflowing the half-width team cards
+   on phones (overflow:hidden clipped "10533" to "1053").
+   clamp() scales type to the viewport so 5–6 digit scores always fit. */
+@media (max-width: 767px) {
+  .challenge-title { font-size: clamp(34px, 11.5vw, 56px); letter-spacing: 2px; }
+  .challenge-dates { font-size: 15px; }
+  .vs-section { grid-template-columns: 1fr 32px 1fr; gap: 8px; }
+  .team-card { padding: 16px 8px 14px; }
+  .team-label { font-size: clamp(17px, 5.2vw, 24px); letter-spacing: 2px; }
+  .team-name { font-size: 16px; }
+  .team-pts { font-size: clamp(30px, 10.5vw, 56px); }
+  .metric-val .num { font-size: clamp(26px, 8.5vw, 42px); }
+  .cunit .n { font-size: clamp(34px, 10.5vw, 52px); }
+  .countdown-nums { gap: 14px; }
+  .member-pts-sm { font-size: 24px; }
+  .lb-pts { font-size: 26px; }
+  .week-title { font-size: 30px; }
+}
